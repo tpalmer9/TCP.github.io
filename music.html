@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Music Page">
-    <title>My Music</title>
+    <title>Music</title>
     <style>
         body {
             font-family: 'Verdana', sans-serif;
@@ -16,37 +16,60 @@
             width: 80%;
             margin: 0 auto;
             padding: 40px 0;
-            text-align: center;
+            text-align: left;
         }
 
         header {
             background-color: white;
             color: black;
-            padding: 20px 0;
-            border-bottom: 2px solid black;
+            padding: 40px 0;
+            text-align: left;
+            margin-bottom: 20px; /* Space between title and container */
         }
 
         footer {
             background-color: white;
             color: black;
-            padding: 20px 0;
-            border-top: 2px solid black;
+            padding: 40px;
             text-align: center;
         }
 
         h1 {
             font-size: 2.5em;
+            margin: 0;
+            line-height: 1;
+            text-align: left;
+        }
+
+        .music-link {
+            display: block;
+            text-decoration: none;
+            font-size: 1.2em;
+            color: black;
+            margin: 10px 0;
+            transition: font-size 0.3s ease;
+        }
+
+        .music-link:hover {
+            font-size: 1.4em;
+        }
+
+        /* Ensure consistent left alignment */
+        .container, header h1, .music-link {
+            margin-left: 40px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>My Music</h1>
+        <h1>Music</h1>
     </header>
 
     <div class="container">
-        <p>Here you can showcase your music, audio files, or any other content related to your music.</p>
+        <p>Piano</p>
+        <p>Electronic</p>
+        <p>Improvisations</p>
     </div>
 
     <footer>
