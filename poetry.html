@@ -16,7 +16,7 @@
             width: 80%;
             margin: 0 auto;
             padding: 40px 0;
-            text-align: center;
+            text-align: left; /* Align text to the left */
         }
 
         header {
@@ -24,6 +24,7 @@
             color: black;
             padding: 20px 0;
             border-bottom: 2px solid black;
+            text-align: center;
         }
 
         footer {
@@ -37,6 +38,19 @@
         h1 {
             font-size: 2.5em;
         }
+
+        .poem-link {
+            display: block;
+            text-decoration: none;
+            font-size: 1.2em;
+            color: black;
+            margin: 10px 0;
+            transition: font-size 0.3s ease;
+        }
+
+        .poem-link:hover {
+            font-size: 1.4em;
+        }
     </style>
 </head>
 <body>
@@ -46,7 +60,11 @@
     </header>
 
     <div class="container">
-        <p>Here you can showcase your poems, add text, or any other content related to your poetry.</p>
+        <a href="poem1.pdf" class="poem-link">Poem Title 1</a>
+        <a href="poem2.pdf" class="poem-link">Poem Title 2</a>
+        <a href="poem3.pdf" class="poem-link">Poem Title 3</a>
+        <a href="poem4.pdf" class="poem-link">Poem Title 4</a>
+        <a href="poem5.pdf" class="poem-link">Poem Title 5</a>
     </div>
 
     <footer>
