@@ -16,15 +16,17 @@
             width: 80%;
             margin: 0 auto;
             padding: 40px 0;
-            text-align: left; /* Align text to the left */
+            text-align: left;
+            display: flex;
+            align-items: center;
         }
 
         header {
             background-color: white;
             color: black;
             padding: 40px 0;
-            border-bottom: 2px solid black;
             text-align: left;
+            margin-right: 20px;
         }
 
         footer {
@@ -36,6 +38,8 @@
 
         h1 {
             font-size: 2.5em;
+            margin: 0;
+            line-height: 1;
         }
 
         .poem-link {
@@ -50,19 +54,38 @@
         .poem-link:hover {
             font-size: 1.4em;
         }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            text-decoration: none;
+            color: black;
+            transition: color 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: gray;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Poetry</h1>
-    </header>
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">←</a>
 
     <div class="container">
-        <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:bbcc02cd-2c6a-3551-8dd6-5fbee00085cf" class="poem-link" target="_blank">Nocturne</a>
-        <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:6811963d-4816-3af0-bdc1-b8e727d0fc24" class="poem-link" target="_blank">Playing 'Meadowlarks'</a>
-        <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:1b627149-b719-3cc5-9181-f9d5e1dd086f" class="poem-link" target="_blank">Twenty-one Rings</a>
-        <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:287eea1b-0206-3bc2-abd9-e7ea208848cb" class="poem-link" target="_blank">The Cave</a>
+        <header>
+            <h1>Poetry</h1>
+        </header>
+
+        <div>
+            <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:bbcc02cd-2c6a-3551-8dd6-5fbee00085cf" class="poem-link" target="_blank">Nocturne</a>
+            <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:6811963d-4816-3af0-bdc1-b8e727d0fc24" class="poem-link" target="_blank">Playing 'Meadowlarks'</a>
+            <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:1b627149-b719-3cc5-9181-f9d5e1dd086f" class="poem-link" target="_blank">Twenty-one Rings</a>
+            <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:287eea1b-0206-3bc2-abd9-e7ea208848cb" class="poem-link" target="_blank">The Cave</a>
+        </div>
     </div>
 
     <footer>
