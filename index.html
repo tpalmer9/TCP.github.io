@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Personal website landing page">
-    <title>Thomas C Palmer | Digital Designer & Developer</title>
+    <title>Thomas C Palmer</title>
     <style>
         /* Basic reset and styling */
         * {
@@ -23,6 +23,7 @@
             justify-content: center; /* Centers container horizontally */
             align-items: center; /* Centers container vertically */
             height: 100vh; /* Full viewport height */
+            position: relative; /* Allow absolute positioning for image */
         }
 
         .container {
@@ -98,6 +99,25 @@
             color: white;
         }
 
+        /* PNG styling */
+        .background-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%; /* Make it responsive by height */
+            max-width: 40%; /* Prevent image from being too large */
+            opacity: 0.8; /* Slight transparency for subtle effect */
+            z-index: -1; /* Put behind the content */
+        }
+
+        @media (max-width: 768px) {
+            /* Adjust image size for smaller screens */
+            .background-image {
+                max-width: 60%; /* Make it larger on smaller screens */
+                opacity: 0.6; /* Make the image more subtle */
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -107,7 +127,7 @@
     <div class="container">
         <h1>Thomas C Palmer</h1>
         <p>
-            I’m a digital designer and developer who collaborates with brands 
+            I’m a Musician and Writer who collaborates with brands 
             globally to create impactful, mission-focused websites and digital experiences that 
             help businesses achieve their goals. I specialize in creating clean, modern designs 
             with a focus on usability and functionality.
@@ -120,6 +140,9 @@
             <a href="music.html" class="btn">Music</a> 
         </div>
     </div>
+
+    <!-- PNG Image -->
+    <img src="your-image.png" alt="Background Line Drawing" class="background-image">
 
 </body>
 </html>
