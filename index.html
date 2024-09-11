@@ -99,11 +99,11 @@
             color: white;
         }
 
-        /* PNG styling */
+        /* PNG styling for bottom right positioning */
         .background-image {
             position: absolute;
             bottom: 0;
-            left: 0;
+            right: 0; /* Align to the right side */
             height: 100%; /* Make it responsive by height */
             max-width: 40%; /* Prevent image from being too large */
             opacity: 0.8; /* Slight transparency for subtle effect */
@@ -111,7 +111,7 @@
         }
 
         @media (max-width: 768px) {
-        /* Adjust image size for smaller screens */
+            /* Adjust image size for smaller screens */
             .background-image {
                 max-width: 60%; /* Make it larger on smaller screens */
                 opacity: 0.6; /* Make the image more subtle */
