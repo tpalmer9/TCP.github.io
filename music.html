@@ -28,10 +28,15 @@
         }
 
         footer {
-            background-color: white;
-            color: black;
-            padding: 40px;
-            text-align: center;
+            position: fixed; /* Ensures the footer stays at the bottom of the window */
+            bottom: 0; /* Align the footer to the bottom */
+            left: 0;
+            width: 100%; /* Make the footer span the full width of the window */
+            background-color: rgba(255, 255, 255, 0.7); /* Translucent background using RGBA */
+            color: black; /* Text color */
+            padding: 0; /* Remove padding */
+            text-align: center; /* Center the text */
+        
         }
 
         h1 {
