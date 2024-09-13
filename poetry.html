@@ -10,6 +10,7 @@
             font-family: 'Verdana', sans-serif;
             background-color: white;
             color: black;
+            position: relative; /* Ensure absolute positioning for background image */
         }
 
         .container {
@@ -54,6 +55,17 @@
             font-size: 1.4em;
         }
 
+        /* Background image for the right side */
+        .background-image {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 300px; /* Set fixed size */
+            height: auto;
+            opacity: 0.8; /* Slight transparency */
+            z-index: -1; /* Ensure it stays behind the content */
+        }
+
         /* Ensure the title and poem links have consistent alignment */
         .container, header h1, .poem-link {
             margin-left: 40px; /* Adjust this value as needed */
@@ -72,6 +84,9 @@
         <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:1b627149-b719-3cc5-9181-f9d5e1dd086f" class="poem-link" target="_blank">Twenty-one Rings</a>
         <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:287eea1b-0206-3bc2-abd9-e7ea208848cb" class="poem-link" target="_blank">The Cave</a>
     </div>
+
+    <!-- Background Image -->
+    <img src="rockbackground.jpg" alt="Background" class="background-image">
 
     <footer>
         <p>&copy; 2024 Thomas Palmer</p>
