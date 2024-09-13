@@ -49,6 +49,7 @@
             color: black;
             margin: 10px 0;
             transition: font-size 0.3s ease;
+            cursor: pointer;
         }
 
         .music-link:hover {
@@ -59,6 +60,33 @@
         .container, header h1, .music-link {
             margin-left: 40px;
         }
+
+        /* Hidden sections for track lists */
+        .hidden-section {
+            display: none;
+            margin-left: 40px;
+        }
+
+        /* Button styling for track titles */
+        .track-button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #eee;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .track-button:hover {
+            background-color: #ccc;
+        }
+
+        /* Audio player */
+        audio {
+            display: block;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -68,13 +96,51 @@
     </header>
 
     <div class="container">
-        <a href="#" class="music-link">Piano</a>
-        <a href="#" class="music-link">Electronic</a>
+        <!-- Category Button: Piano -->
+        <div class="music-link" onclick="toggleSection('piano-section')">Piano</div>
+        <div id="piano-section" class="hidden-section">
+            <button class="track-button" onclick="playTrack('piano-track1')">Track 1: Piano Melody</button>
+            <button class="track-button" onclick="playTrack('piano-track2')">Track 2: Calm Keys</button>
+            <audio id="piano-track1" src="piano-track1.mp3" controls></audio>
+            <audio id="piano-track2" src="piano-track2.mp3" controls></audio>
+        </div>
+
+        <!-- Category Button: Electronic -->
+        <div class="music-link" onclick="toggleSection('electronic-section')">Electronic</div>
+        <div id="electronic-section" class="hidden-section">
+            <button class="track-button" onclick="playTrack('electronic-track1')">Track 1: Synth Vibes</button>
+            <button class="track-button" onclick="playTrack('electronic-track2')">Track 2: Electric Waves</button>
+            <audio id="electronic-track1" src="electronic-track1.mp3" controls></audio>
+            <audio id="electronic-track2" src="electronic-track2.mp3" controls></audio>
+        </div>
     </div>
 
     <footer>
         <p>&copy; 2024 Thomas Palmer</p>
     </footer>
+
+    <script>
+        // Function to toggle the visibility of a section
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section.style.display === "none" || section.style.display === "") {
+                section.style.display = "block"; // Show the section
+            } else {
+                section.style.display = "none"; // Hide the section
+            }
+        }
+
+        // Function to play a selected track and pause others
+        function playTrack(trackId) {
+            var audioElements = document.querySelectorAll('audio');
+            audioElements.forEach(function(audio) {
+                audio.pause(); // Pause all other tracks
+                audio.currentTime = 0; // Reset the time to the beginning
+            });
+            var selectedTrack = document.getElementById(trackId);
+            selectedTrack.play(); // Play the selected track
+        }
+    </script>
 
 </body>
 </html>
