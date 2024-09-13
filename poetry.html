@@ -10,7 +10,10 @@
             font-family: 'Verdana', sans-serif;
             background-color: white;
             color: black;
-            position: relative; /* Ensure absolute positioning for background image */
+            position: relative;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
         }
 
         .container {
@@ -60,10 +63,11 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            width: 1000px; /* Set fixed size */
+            width: 400px; /* Set fixed size */
             height: auto;
             opacity: 0.8; /* Slight transparency */
             z-index: -1; /* Ensure it stays behind the content */
+            margin-right: -100px; /* Shift image beyond the right edge */
         }
 
         /* Ensure the title and poem links have consistent alignment */
@@ -86,7 +90,7 @@
     </div>
 
     <!-- Background Image -->
-    <img src="rockbackground.jpg" alt="Background" class="background-image">
+    <img src="RockBackground.png" alt="Loading..." class="background-image">
 
     <footer>
         <p>&copy; 2024 Thomas Palmer</p>
