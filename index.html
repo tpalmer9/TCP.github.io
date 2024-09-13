@@ -99,21 +99,21 @@
             color: white;
         }
 
-        /* PNG styling for bottom right positioning */
+        /* PNG styling for fixed size and right alignment */
         .background-image {
-            position: absolute;
+            position: fixed; /* Fix it to the viewport */
             bottom: 0;
-            right: 0; /* Align to the right side */
-            height: 100%; /* Make it responsive by height */
-            max-width: 40%; /* Prevent image from being too large */
+            right: 0; /* Keep the image aligned to the right */
+            width: 300px; /* Set a fixed width */
+            height: auto; /* Maintain aspect ratio */
             opacity: 0.8; /* Slight transparency for subtle effect */
-            z-index: -1; /* Put behind the content */
+            z-index: -1; /* Ensure it's behind the content */
         }
 
         @media (max-width: 768px) {
-            /* Adjust image size for smaller screens */
+    /* Adjust image size for smaller screens */
             .background-image {
-                max-width: 60%; /* Make it larger on smaller screens */
+                width: 200px; /* Reduce size on smaller screens */
                 opacity: 0.6; /* Make the image more subtle */
             }
         }
