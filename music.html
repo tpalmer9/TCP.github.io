@@ -92,6 +92,19 @@
             display: block;
             margin-top: 10px;
         }
+
+        /* Background image for the right side */
+        .background-image {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 1400px; /* Set fixed size */
+            height: auto;
+            opacity: 0.8; /* Slight transparency */
+            margin-right: -450px; /* Shift image beyond the right edge */
+            margin-bottom: -100px;
+        }
+        
     </style>
 </head>
 <body>
@@ -99,6 +112,8 @@
     <header>
         <h1>Music</h1>
     </header>
+
+    <img src="MountBackground.png" alt="Loading..." class="background-image">
 
     <div class="container">
         <!-- Category Button: Piano -->
@@ -120,6 +135,10 @@
         </div>
     </div>
 
+    
+
+
+    
     <footer>
         <p>&copy; 2024 Thomas Palmer</p>
     </footer>
