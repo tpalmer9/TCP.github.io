@@ -10,20 +10,25 @@
             font-family: 'Verdana', sans-serif;
             background-color: white;
             color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
         }
 
         .container {
             width: 80%;
             margin: 0 auto;
             padding: 40px 0;
-            text-align: center;
+            text-align: center; /* Center buttons and content */
         }
 
         header {
             background-color: white;
             color: black;
             padding: 40px 0;
-            text-align: center;
+            text-align: center; /* Center the header */
             margin-bottom: 20px; /* Space between title and container */
         }
 
@@ -36,14 +41,12 @@
             color: black; /* Text color */
             padding: 0; /* Remove padding */
             text-align: center; /* Center the text */
-        
         }
 
         h1 {
             font-size: 2.5em;
             margin: 0;
             line-height: 1;
-            text-align: left;
         }
 
         /* Music category links styled like poetry buttons */
@@ -61,15 +64,10 @@
             font-size: 1.4em;
         }
 
-        /* Ensure consistent left alignment */
-        .container, header h1, .music-link {
-            margin-left: 40px;
-        }
-
         /* Hidden sections for track lists */
         .hidden-section {
             display: none;
-            margin-left: 40px;
+            text-align: center; /* Center the hidden sections */
         }
 
         /* Button styling for track titles */
@@ -93,16 +91,16 @@
             margin-top: 10px;
         }
 
-        /* Background image for the right side */
+        /* Background image for the left side */
         .background-image {
             position: fixed;
             bottom: 0;
             left: 0;
-            width: 2000px; /* Set fixed size */
+            width: 500px; /* Adjusted size */
             height: auto;
             opacity: 0.8; /* Slight transparency */
         }
-        
+
     </style>
 </head>
 <body>
@@ -133,10 +131,6 @@
         </div>
     </div>
 
-    
-
-
-    
     <footer>
         <p>&copy; 2024 Thomas Palmer</p>
     </footer>
