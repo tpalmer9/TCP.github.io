@@ -5,26 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Music Page">
     <title>Music</title>
+
+    <link rel="preload" href="MountBackground.png" as="image">
+
     <style>
         body {
             font-family: 'Verdana', sans-serif;
             background-color: white;
             color: black;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 40px 0;
-            text-align: center; /* Center the content */
+            position: relative;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
         }
 
         header {
             background-color: white;
             color: black;
             padding: 40px 0;
-            text-align: center; /* Center the header */
+            text-align: center;
             margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the buttons horizontally */
+            padding: 20px 0;
+        }
+
+        .music-link {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: black;
+            margin: 10px 0;
+            transition: font-size 0.3s ease;
+        }
+
+        .music-link:hover {
+            font-size: 1.4em;
+        }
+
+        /* Background image for the left side */
+        .background-image {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 1300px; /* Set fixed size */
+            height: auto;
+            opacity: 0.8; /* Slight transparency */
+            margin-left: -450px; /* Shift image beyond the left edge */
+            margin-bottom: -100px; /* Shift image slightly up to cut off bottom part */
         }
 
         footer {
@@ -37,56 +77,6 @@
             padding: 0;
             text-align: center;
         }
-
-        h1 {
-            font-size: 2.5em;
-            margin: 0;
-            line-height: 1;
-            text-align: center; /* Center the title */
-        }
-
-        /* Music category links styled like buttons */
-        .music-link {
-            display: inline-block; /* Change to inline-block for centered buttons */
-            text-decoration: none;
-            font-size: 1.2em;
-            color: black;
-            margin: 10px 0;
-            transition: font-size 0.3s ease;
-            cursor: pointer;
-        }
-
-        .music-link:hover {
-            font-size: 1.4em;
-        }
-
-        /* Hidden sections for track lists */
-        .hidden-section {
-            display: none;
-        }
-
-        /* Button styling for track titles */
-        .track-button {
-            display: block;
-            margin: 10px auto; /* Center the buttons */
-            padding: 10px;
-            background-color: #eee;
-            border: none;
-            cursor: pointer;
-            font-size: 1em;
-        }
-
-        .track-button:hover {
-            background-color: #ccc;
-        }
-
-        /* Audio player */
-        audio {
-            display: block;
-            margin-top: 10px;
-            margin-left: auto;
-            margin-right: auto;
-        }
     </style>
 </head>
 <body>
@@ -96,7 +86,6 @@
     </header>
 
     <div class="container">
-        <!-- Category Button: Piano -->
         <div class="music-link" onclick="toggleSection('piano-section')">Piano</div>
         <div id="piano-section" class="hidden-section">
             <button class="track-button" onclick="playTrack('piano-track1')">Track 1: Piano Melody</button>
@@ -105,7 +94,6 @@
             <audio id="piano-track2" src="piano-track2.mp3" controls></audio>
         </div>
 
-        <!-- Category Button: Electronic -->
         <div class="music-link" onclick="toggleSection('electronic-section')">Electronic</div>
         <div id="electronic-section" class="hidden-section">
             <button class="track-button" onclick="playTrack('electronic-track1')">Track 1: Synth Vibes</button>
@@ -115,30 +103,31 @@
         </div>
     </div>
 
+    <!-- Background Image -->
+    <img src="MountBackground.png" alt="Loading..." class="background-image">
+
     <footer>
         <p>&copy; 2024 Thomas Palmer</p>
     </footer>
 
     <script>
-        // Function to toggle the visibility of a section
         function toggleSection(sectionId) {
             var section = document.getElementById(sectionId);
             if (section.style.display === "none" || section.style.display === "") {
-                section.style.display = "block"; // Show the section
+                section.style.display = "block";
             } else {
-                section.style.display = "none"; // Hide the section
+                section.style.display = "none";
             }
         }
 
-        // Function to play a selected track and pause others
         function playTrack(trackId) {
             var audioElements = document.querySelectorAll('audio');
             audioElements.forEach(function(audio) {
-                audio.pause(); // Pause all other tracks
-                audio.currentTime = 0; // Reset the time to the beginning
+                audio.pause();
+                audio.currentTime = 0;
             });
             var selectedTrack = document.getElementById(trackId);
-            selectedTrack.play(); // Play the selected track
+            selectedTrack.play();
         }
     </script>
 
