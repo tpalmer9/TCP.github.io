@@ -86,6 +86,7 @@
     </header>
 
     <div class="container">
+        <!-- Category Button: Piano -->
         <div class="music-link" onclick="toggleSection('piano-section')">Piano</div>
         <div id="piano-section" class="hidden-section">
             <button class="track-button" onclick="playTrack('piano-track1')">Track 1: Piano Melody</button>
@@ -94,6 +95,7 @@
             <audio id="piano-track2" src="piano-track2.mp3" controls></audio>
         </div>
 
+        <!-- Category Button: Electronic -->
         <div class="music-link" onclick="toggleSection('electronic-section')">Electronic</div>
         <div id="electronic-section" class="hidden-section">
             <button class="track-button" onclick="playTrack('electronic-track1')">Track 1: Synth Vibes</button>
@@ -110,26 +112,8 @@
         <p>&copy; 2024 Thomas Palmer</p>
     </footer>
 
-    <script>
-        function toggleSection(sectionId) {
-            var section = document.getElementById(sectionId);
-            if (section.style.display === "none" || section.style.display === "") {
-                section.style.display = "block";
-            } else {
-                section.style.display = "none";
-            }
-        }
-
-        function playTrack(trackId) {
-            var audioElements = document.querySelectorAll('audio');
-            audioElements.forEach(function(audio) {
-                audio.pause();
-                audio.currentTime = 0;
-            });
-            var selectedTrack = document.getElementById(trackId);
-            selectedTrack.play();
-        }
-    </script>
+    <!-- Link to the external JS file -->
     <script src="music.js"></script>
+
 </body>
 </html>
