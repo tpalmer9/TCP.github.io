@@ -10,25 +10,20 @@
             font-family: 'Verdana', sans-serif;
             background-color: white;
             color: black;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center content horizontally */
         }
 
         .container {
             width: 80%;
             margin: 0 auto;
             padding: 40px 0;
-            text-align: center; /* Center buttons and content */
+            text-align: left;
         }
 
         header {
             background-color: white;
             color: black;
             padding: 40px 0;
-            text-align: center; /* Center the header */
+            text-align: left;
             margin-bottom: 20px; /* Space between title and container */
         }
 
@@ -41,38 +36,40 @@
             color: black; /* Text color */
             padding: 0; /* Remove padding */
             text-align: center; /* Center the text */
+        
         }
 
         h1 {
             font-size: 2.5em;
             margin: 0;
             line-height: 1;
+            text-align: left;
         }
 
-        /* Music category links styled like buttons */
+        /* Music category links styled like poetry buttons */
         .music-link {
             display: block;
             text-decoration: none;
             font-size: 1.2em;
             color: black;
             margin: 10px 0;
-            transition: all 0.3s ease;
+            transition: font-size 0.3s ease;
             cursor: pointer;
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 5px;
         }
 
         .music-link:hover {
             font-size: 1.4em;
-            background-color: #ccc;
+        }
+
+        /* Ensure consistent left alignment */
+        .container, header h1, .music-link {
+            margin-left: 40px;
         }
 
         /* Hidden sections for track lists */
         .hidden-section {
             display: none;
-            text-align: center; /* Center the hidden sections */
-            margin-top: 10px;
+            margin-left: 40px;
         }
 
         /* Button styling for track titles */
@@ -95,18 +92,6 @@
             display: block;
             margin-top: 10px;
         }
-
-        /* Background image for the left side */
-        .background-image {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            height: 100vh; /* Full viewport height */
-            width: auto; /* Keep the aspect ratio */
-            object-fit: cover; /* Maintain aspect ratio and cover the height */
-            opacity: 0.8; /* Slight transparency */
-        }
-
     </style>
 </head>
 <body>
@@ -114,8 +99,6 @@
     <header>
         <h1>Music</h1>
     </header>
-
-    <img src="MountBackground.png" alt="Loading..." class="background-image">
 
     <div class="container">
         <!-- Category Button: Piano -->
