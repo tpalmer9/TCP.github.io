@@ -16,39 +16,38 @@
             width: 80%;
             margin: 0 auto;
             padding: 40px 0;
-            text-align: left;
+            text-align: center; /* Center the content */
         }
 
         header {
             background-color: white;
             color: black;
             padding: 40px 0;
-            text-align: left;
-            margin-bottom: 20px; /* Space between title and container */
+            text-align: center; /* Center the header */
+            margin-bottom: 20px;
         }
 
         footer {
-            position: fixed; /* Ensures the footer stays at the bottom of the window */
-            bottom: 0; /* Align the footer to the bottom */
+            position: fixed;
+            bottom: 0;
             left: 0;
-            width: 100%; /* Make the footer span the full width of the window */
-            background-color: rgba(255, 255, 255, 0.7); /* Translucent background using RGBA */
-            color: black; /* Text color */
-            padding: 0; /* Remove padding */
-            text-align: center; /* Center the text */
-        
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: black;
+            padding: 0;
+            text-align: center;
         }
 
         h1 {
             font-size: 2.5em;
             margin: 0;
             line-height: 1;
-            text-align: left;
+            text-align: center; /* Center the title */
         }
 
-        /* Music category links styled like poetry buttons */
+        /* Music category links styled like buttons */
         .music-link {
-            display: block;
+            display: inline-block; /* Change to inline-block for centered buttons */
             text-decoration: none;
             font-size: 1.2em;
             color: black;
@@ -61,21 +60,15 @@
             font-size: 1.4em;
         }
 
-        /* Ensure consistent left alignment */
-        .container, header h1, .music-link {
-            margin-left: 40px;
-        }
-
         /* Hidden sections for track lists */
         .hidden-section {
             display: none;
-            margin-left: 40px;
         }
 
         /* Button styling for track titles */
         .track-button {
             display: block;
-            margin: 10px 0;
+            margin: 10px auto; /* Center the buttons */
             padding: 10px;
             background-color: #eee;
             border: none;
@@ -91,6 +84,8 @@
         audio {
             display: block;
             margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
