@@ -49,25 +49,30 @@
             line-height: 1;
         }
 
-        /* Music category links styled like poetry buttons */
+        /* Music category links styled like buttons */
         .music-link {
             display: block;
             text-decoration: none;
             font-size: 1.2em;
             color: black;
             margin: 10px 0;
-            transition: font-size 0.3s ease;
+            transition: all 0.3s ease;
             cursor: pointer;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
         }
 
         .music-link:hover {
             font-size: 1.4em;
+            background-color: #ccc;
         }
 
         /* Hidden sections for track lists */
         .hidden-section {
             display: none;
             text-align: center; /* Center the hidden sections */
+            margin-top: 10px;
         }
 
         /* Button styling for track titles */
@@ -96,8 +101,9 @@
             position: fixed;
             bottom: 0;
             left: 0;
-            width: 1500px; /* Adjusted size */
-            height: auto;
+            height: 100vh; /* Full viewport height */
+            width: auto; /* Keep the aspect ratio */
+            object-fit: cover; /* Maintain aspect ratio and cover the height */
             opacity: 0.8; /* Slight transparency */
         }
 
