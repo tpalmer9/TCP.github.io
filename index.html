@@ -3,143 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Music Page">
-    <title>Music</title>
+    <meta name="description" content="Personal website landing page">
+    <title>Thomas C Palmer</title>
     <style>
+        /* Basic reset and styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Verdana', sans-serif;
-            background-color: white;
-            color: black;
-            background-image: url('MountBackground.png');
-            background-position: bottom left; /* Position image in the bottom-left corner */
-            background-size: auto 120%; /* Scale image with some part cut off at the bottom */
-            background-attachment: fixed; /* Keep the image fixed in position */
-            background-repeat: no-repeat;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5; /* Light gray background */
+            color: #000; /* Black text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Centers container horizontally */
+            align-items: center; /* Centers container vertically */
+            height: 100vh; /* Full viewport height */
+            position: relative; /* Allow absolute positioning for image */
         }
 
         .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 40px 0;
-            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            text-align: left; /* Left-aligned content */
         }
 
-        header {
-            background-color: white;
-            color: black;
-            padding: 40px 0;
-            text-align: center;
+        /* Title styling */
+        h1 {
+            font-size: 3em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        h1 span {
+            display: inline-block;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: 400;
             margin-bottom: 20px;
         }
 
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.7);
-            color: black;
-            padding: 0;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin: 0;
-            line-height: 1;
-            text-align: center;
-        }
-
-        .music-link {
-            display: inline-block;
-            text-decoration: none;
-            font-size: 1.2em;
-            color: black;
-            margin: 10px 0;
-            transition: font-size 0.3s ease;
-            cursor: pointer;
-        }
-
-        .music-link:hover {
-            font-size: 1.4em;
-        }
-
-        .hidden-section {
-            display: none;
-        }
-
-        .track-button {
-            display: block;
-            margin: 10px auto;
-            padding: 10px;
-            background-color: #eee;
-            border: none;
-            cursor: pointer;
+        p {
             font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 40px;
         }
 
-        .track-button:hover {
-            background-color: #ccc;
+        /* Button styling */
+        .buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
         }
 
-        audio {
-            display: block;
-            margin-top: 10px;
-            margin-left: auto;
-            margin-right: auto;
+        .btn {
+            padding: 10px 20px;
+            border: 1px solid black;
+            border-radius: 20px;
+            text-decoration: none;
+            color: black;
+            font-size: 1em;
+            font-weight: 300;
+            transition: background-color 0.3s ease;
         }
+
+        .btn:hover {
+            background-color: black;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Music</h1>
-    </header>
-
     <div class="container">
-        <!-- Category Button: Piano -->
-        <div class="music-link" onclick="toggleSection('piano-section')">Piano</div>
-        <div id="piano-section" class="hidden-section">
-            <button class="track-button" onclick="playTrack('piano-track1')">Track 1: Piano Melody</button>
-            <button class="track-button" onclick="playTrack('piano-track2')">Track 2: Calm Keys</button>
-            <audio id="piano-track1" src="piano-track1.mp3" controls></audio>
-            <audio id="piano-track2" src="piano-track2.mp3" controls></audio>
-        </div>
+        <h1>Thomas C Palmer</h1>
+        <p> Student of human cognition, perception, machine learning, art, and the wilderness. </p>
 
-        <!-- Category Button: Electronic -->
-        <div class="music-link" onclick="toggleSection('electronic-section')">Electronic</div>
-        <div id="electronic-section" class="hidden-section">
-            <button class="track-button" onclick="playTrack('electronic-track1')">Track 1: Synth Vibes</button>
-            <button class="track-button" onclick="playTrack('electronic-track2')">Track 2: Electric Waves</button>
-            <audio id="electronic-track1" src="electronic-track1.mp3" controls></audio>
-            <audio id="electronic-track2" src="electronic-track2.mp3" controls></audio>
+        <!-- Buttons Section -->
+        <div class="buttons">
+            <a href="work.html" class="btn">Work</a>
+            <a href="poetry.html" class="btn">Poetry</a>
+            <a href="music.html" class="btn">Music</a> 
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2024 Thomas Palmer</p>
-    </footer>
-
-    <script>
-        function toggleSection(sectionId) {
-            var section = document.getElementById(sectionId);
-            if (section.style.display === "none" || section.style.display === "") {
-                section.style.display = "block";
-            } else {
-                section.style.display = "none";
-            }
-        }
-
-        function playTrack(trackId) {
-            var audioElements = document.querySelectorAll('audio');
-            audioElements.forEach(function(audio) {
-                audio.pause();
-                audio.currentTime = 0;
-            });
-            var selectedTrack = document.getElementById(trackId);
-            selectedTrack.play();
-        }
-    </script>
-
+    
 </body>
 </html>
