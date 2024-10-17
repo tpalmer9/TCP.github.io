@@ -60,10 +60,10 @@
             position: fixed;
             bottom: 0;
             left: 0;
-            width: 1300px; /* Set fixed size */
+            width: 1500px; /* Set fixed size */
             height: auto;
             opacity: 0.8; /* Slight transparency */
-            margin-left: -450px; /* Shift image beyond the left edge */
+            margin-left: -600px; /* Shift image beyond the left edge */
             margin-bottom: -100px; /* Shift image slightly up to cut off bottom part */
         }
 
@@ -89,8 +89,6 @@
         <!-- Category Button: Piano -->
         <div class="music-link" onclick="toggleSection('piano-section')">Piano</div>
         <div id="piano-section" class="hidden-section">
-            <button class="track-button" onclick="playTrack('piano-track1')">Track 1: Piano Melody</button>
-            <button class="track-button" onclick="playTrack('piano-track2')">Track 2: Calm Keys</button>
             <audio id="piano-track1" src="piano-track1.mp3" controls></audio>
             <audio id="piano-track2" src="piano-track2.mp3" controls></audio>
         </div>
@@ -98,10 +96,8 @@
         <!-- Category Button: Electronic -->
         <div class="music-link" onclick="toggleSection('electronic-section')">Electronic</div>
         <div id="electronic-section" class="hidden-section">
-            <button class="track-button" onclick="playTrack('electronic-track1')">Track 1: Synth Vibes</button>
-            <button class="track-button" onclick="playTrack('electronic-track2')">Track 2: Electric Waves</button>
-            <audio id="electronic-track1" src="electronic-track1.mp3" controls></audio>
-            <audio id="electronic-track2" src="electronic-track2.mp3" controls></audio>
+            <audio id="to the bone" src="electronic-track1.mp3" controls></audio>
+            <audio id="in eelgrass" src="electronic-track2.mp3" controls></audio>
         </div>
     </div>
 
