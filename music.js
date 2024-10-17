@@ -1,3 +1,4 @@
+// Function to toggle the visibility of sections
 function toggleSection(sectionId) {
     var section = document.getElementById(sectionId);
     if (section.style.display === "none" || section.style.display === "") {
@@ -7,13 +8,9 @@ function toggleSection(sectionId) {
     }
 }
 
-// Function to play a selected track and pause others
-function playTrack(trackId) {
-    var audioElements = document.querySelectorAll('audio');
-    audioElements.forEach(function(audio) {
-        audio.pause(); // Pause all other tracks
-        audio.currentTime = 0; // Reset the time to the beginning
+// Ensure sections are hidden when the page loads
+window.onload = function() {
+    document.querySelectorAll('.hidden-section').forEach(function(section) {
+        section.style.display = 'none';
     });
-    var selectedTrack = document.getElementById(trackId);
-    selectedTrack.play(); // Play the selected track
-}
+};
