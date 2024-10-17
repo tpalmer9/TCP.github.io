@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Poetry Page">
-    <title>Poetry</title>
+    <meta name="description" content="Music Page">
+    <title>Music</title>
 
-    <link rel="preload" href="RockBackground.png" as="image">
+    <link rel="preload" href="MountBackground.png" as="image">
     
     <style>
         body {
@@ -27,14 +27,13 @@
             color: black;
             padding: 40px 0;
             text-align: center; /* Center the header */
-            margin-bottom: 20px; /* Space between title and poems */
+            margin-bottom: 20px; /* Space between title and buttons */
         }
 
         h1 {
             font-size: 2.5em;
             margin: 0;
-            line-height: 1
-
+            line-height: 1;
         }
 
         .container {
@@ -44,16 +43,48 @@
             padding: 20px 0;
         }
 
-        .poem-link {
+        .music-link {
             text-decoration: none;
             font-size: 1.2em;
             color: black;
             margin: 10px 0;
-            transition: font-size 0.3s ease;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.05); /* Slight background color to indicate it's a button */
+            border-radius: 5px;
+            transition: all 0.3s ease; /* Smooth transition */
+            cursor: pointer;
         }
 
-        .poem-link:hover {
+        .music-link:hover {
             font-size: 1.4em;
+            background-color: rgba(0, 0, 0, 0.1); /* Change background color on hover */
+            transform: scale(1.1); /* Slightly enlarge on hover */
+        }
+
+        .hidden-section {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .soundcloud-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff5500;
+            color: white;
+            border: none;
+            font-size: 1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .soundcloud-button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .soundcloud-button:hover {
+            background-color: #ff3300;
         }
 
         /* Background image for the right side */
@@ -61,44 +92,74 @@
             position: fixed;
             bottom: 0;
             right: 0;
-            width: 1300px; /* Set fixed size */
+            width: 1300px;
             height: auto;
-            opacity: 0.8; /* Slight transparency */
-            margin-right: -450px; /* Shift image beyond the right edge */
+            opacity: 0.8;
+            margin-right: -450px;
             margin-bottom: -100px;
         }
 
         footer {
-            position: fixed; /* Ensures the footer stays at the bottom of the window */
-            bottom: 0; /* Align the footer to the bottom */
+            position: fixed;
+            bottom: 0;
             left: 0;
-            width: 100%; /* Make the footer span the full width of the window */
-            background-color: rgba(255, 255, 255, 0.7); /* Translucent background using RGBA */
-            color: black; /* Text color */
-            padding: 0; /* Remove padding */
-            text-align: center; /* Center the text */
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: black;
+            padding: 0;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Poetry</h1>
+        <h1>Music</h1>
     </header>
 
     <div class="container">
-        <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:bbcc02cd-2c6a-3551-8dd6-5fbee00085cf" class="poem-link" target="_blank">Nocturne</a>
-        <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:6811963d-4816-3af0-bdc1-b8e727d0fc24" class="poem-link" target="_blank">Playing 'Meadowlarks'</a>
-        <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:1b627149-b719-3cc5-9181-f9d5e1dd086f" class="poem-link" target="_blank">Twenty-one Rings</a>
-        <a href="https://acrobat.adobe.com/link/track?uri=urn:aaid:scds:US:287eea1b-0206-3bc2-abd9-e7ea208848cb" class="poem-link" target="_blank">The Cave</a>
+        <!-- Piano Button -->
+        <div class="music-link" onclick="toggleSection('piano-section')">Piano</div>
+        <div id="piano-section" class="hidden-section">
+            <button class="soundcloud-button">
+                <a href="https://soundcloud.com/your-piano-soundcloud" target="_blank">SoundCloud</a>
+            </button>
+        </div>
+
+        <!-- Guitar Button -->
+        <div class="music-link" onclick="toggleSection('guitar-section')">Guitar</div>
+        <div id="guitar-section" class="hidden-section">
+            <button class="soundcloud-button">
+                <a href="https://soundcloud.com/your-guitar-soundcloud" target="_blank">SoundCloud</a>
+            </button>
+        </div>
+
+        <!-- Ambient Button -->
+        <div class="music-link" onclick="toggleSection('ambient-section')">Ambient</div>
+        <div id="ambient-section" class="hidden-section">
+            <button class="soundcloud-button">
+                <a href="https://soundcloud.com/your-ambient-soundcloud" target="_blank">SoundCloud</a>
+            </button>
+        </div>
+
+        <!-- Electronic Button -->
+        <div class="music-link" onclick="toggleSection('electronic-section')">Electronic</div>
+        <div id="electronic-section" class="hidden-section">
+            <button class="soundcloud-button">
+                <a href="https://soundcloud.com/your-electronic-soundcloud" target="_blank">SoundCloud</a>
+            </button>
+        </div>
     </div>
 
     <!-- Background Image -->
-    <img src="RockBackground.png" alt="Loading..." class="background-image">
+    <img src="MountBackground.png" alt="Loading..." class="background-image">
 
     <footer>
         <p>&copy; 2024 Thomas Palmer</p>
     </footer>
+
+    <!-- Link to the external JS file -->
+    <script src="music.js"></script>
 
 </body>
 </html>
