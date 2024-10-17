@@ -14,12 +14,12 @@
             background-color: white;
             color: black;
             position: relative;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center content horizontally */
+            align-items: center;
         }
 
         header {
@@ -39,7 +39,7 @@
         .container {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center the buttons horizontally */
+            align-items: center;
             padding: 20px 0;
         }
 
@@ -58,7 +58,28 @@
 
         /* Hidden section style */
         .hidden-section {
-            display: none; /* Hide sections by default */
+            display: none;
+            margin-top: 10px;
+        }
+
+        .soundcloud-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff5500;
+            color: white;
+            border: none;
+            font-size: 1em;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .soundcloud-button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .soundcloud-button:hover {
+            background-color: #ff3300;
         }
 
         /* Background image for the left side */
@@ -66,11 +87,11 @@
             position: fixed;
             bottom: 0;
             left: 0;
-            width: 2000px; /* Set fixed size */
+            width: 2000px;
             height: auto;
-            opacity: 0.8; /* Slight transparency */
-            margin-left: -1000px; /* Shift image beyond the left edge */
-            margin-bottom: -300px; /* Shift image slightly up to cut off bottom part */
+            opacity: 0.8;
+            margin-left: -1000px;
+            margin-bottom: -300px;
         }
 
         footer {
@@ -92,18 +113,36 @@
     </header>
 
     <div class="container">
-        <!-- Category Button: Piano -->
+        <!-- Piano Button -->
         <div class="music-link" onclick="toggleSection('piano-section')">Piano</div>
         <div id="piano-section" class="hidden-section">
-            <audio id="piano-track1" src="piano-track1.mp3" controls></audio>
-            <audio id="piano-track2" src="piano-track2.mp3" controls></audio>
+            <button class="soundcloud-button">
+                <a href="https://soundcloud.com/your-piano-soundcloud" target="_blank">SoundCloud</a>
+            </button>
         </div>
 
-        <!-- Category Button: Electronic -->
+        <!-- Guitar Button -->
+        <div class="music-link" onclick="toggleSection('guitar-section')">Guitar</div>
+        <div id="guitar-section" class="hidden-section">
+            <button class="soundcloud-button">
+                <a href="https://soundcloud.com/your-guitar-soundcloud" target="_blank">SoundCloud</a>
+            </button>
+        </div>
+
+        <!-- Ambient Button -->
+        <div class="music-link" onclick="toggleSection('ambient-section')">Ambient</div>
+        <div id="ambient-section" class="hidden-section">
+            <button class="soundcloud-button">
+                <a href="https://soundcloud.com/your-ambient-soundcloud" target="_blank">SoundCloud</a>
+            </button>
+        </div>
+
+        <!-- Electronic Button -->
         <div class="music-link" onclick="toggleSection('electronic-section')">Electronic</div>
         <div id="electronic-section" class="hidden-section">
-            <audio id="to the bone" src="to the bone.wav" controls></audio>
-            <audio id="in eelgrass" src="in eelgrass.wav" controls></audio>
+            <button class="soundcloud-button">
+                <a href="https://soundcloud.com/your-electronic-soundcloud" target="_blank">SoundCloud</a>
+            </button>
         </div>
     </div>
 
@@ -114,24 +153,8 @@
         <p>&copy; 2024 Thomas Palmer</p>
     </footer>
 
-    <!-- JavaScript to handle toggle -->
-    <script>
-        function toggleSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section.style.display === 'none' || section.style.display === '') {
-                section.style.display = 'block';
-            } else {
-                section.style.display = 'none';
-            }
-        }
-
-        // Ensure sections are hidden when the page loads
-        window.onload = function() {
-            document.querySelectorAll('.hidden-section').forEach(function(section) {
-                section.style.display = 'none';
-            });
-        };
-    </script>
+    <!-- Link to the external JS file -->
+    <script src="music.js"></script>
 
 </body>
 </html>
