@@ -33,8 +33,7 @@
         h1 {
             font-size: 2.5em;
             margin: 0;
-            line-height: 1
-
+            line-height: 1;
         }
 
         .container {
@@ -49,22 +48,24 @@
             font-size: 1.2em;
             color: black;
             margin: 10px 0;
+            padding: 5px; /* Add padding to make links more clickable */
             transition: font-size 0.3s ease;
         }
 
         .music-link:hover {
             font-size: 1.4em;
+            cursor: pointer; /* Ensures pointer is visible when hovering over the link */
         }
 
-        /* Background image for the right side */
+        /* Background image for the left side */
         .background-image {
             position: fixed;
             bottom: 0;
-            right: 0;
+            left: 0; /* Aligns the image to the left */
             width: 1500px; /* Set fixed size */
             height: auto;
             opacity: 0.8; /* Slight transparency */
-            margin-left: 450px; /* Shift image beyond the right edge */
+            margin-left: -200px; /* Shift part of the image off the left edge */
             margin-bottom: -100px;
         }
 
@@ -87,8 +88,8 @@
     </header>
 
     <div class="container">
-        <a href="https://soundcloud.com/tpem-253275776/tracks" class="music-link" target="_blank">Piano</a>
-        <a href="https://soundcloud.com/tpem-253275776/tracks" class="music-link" target="_blank">Electronic</a>
+        <a href="https://soundcloud.com/tpem-253275776/piano" class="music-link" target="_blank">Piano</a>
+        <a href="https://soundcloud.com/tpem-253275776/electronic" class="music-link" target="_blank">Electronic</a>
     </div>
 
     <!-- Background Image -->
