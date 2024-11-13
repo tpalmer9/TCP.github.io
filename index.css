@@ -47,7 +47,7 @@ nav a:hover {
 
 @font-face {
     font-family: 'CustomFontName';
-    src: url('ThomasCPalmer (4).otf') format('truetype'); /* Adjust path and format as needed */
+    src: url('ThomasCPalmer.otf') format('truetype'); /* Adjust path and format as needed */
     font-weight: normal;
     font-style: normal;
 }
