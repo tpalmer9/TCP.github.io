@@ -305,7 +305,6 @@ body {
 .grid-item.active {
     flex: 0 0 30vw; /* Adjust width as desired */
     transition: flex 0.3s ease;
-    border-right: 0;
 }
 
 .work-grid-container.expanded {
@@ -319,6 +318,7 @@ body {
 
 .work-grid-container .grid-item.active {
     flex: 0 0 20vw; /* Active item takes 20% of viewport width */
+    border-right: 0;
 }
 
 #close-details {
