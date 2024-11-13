@@ -115,7 +115,10 @@ gridItems.forEach(item => {
 
         // Update details box content
         detailsTitle.textContent = this.dataset.title;
-        detailsDescription.textContent = this.dataset.description;
+
+        // Get full description from the hidden .full-description div and set it in details box
+        const fullDescriptionContent = this.querySelector('.full-description').innerHTML;
+        detailsDescription.innerHTML = fullDescriptionContent;
 
         // Show and expand the details box
         detailsBox.classList.add('active');
