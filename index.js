@@ -54,10 +54,20 @@ document.addEventListener("DOMContentLoaded", function() {
     // Toggle between slideshow and about content on navbar link clicks
     aboutLink.addEventListener("click", function(event) {
         event.preventDefault();
-        slideshow.style.display = "none"; // Hide the slideshow
-        aboutContent.style.display = "flex"; // Show the About content
-        homeLink.classList.remove("active");
-        aboutLink.classList.add("active");
+
+        // Scroll to top before displaying the About content
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        // Use a timeout to allow scrolling to finish before toggling content
+        setTimeout(() => {
+            slideshow.style.display = "none"; // Hide the slideshow
+            aboutContent.style.display = "flex"; // Show the About content
+            homeLink.classList.remove("active");
+            aboutLink.classList.add("active");
+        }, 500); // Adjust delay (in ms) as needed to match scroll duration
     });
 
     homeLink.addEventListener("click", function(event) {
@@ -86,7 +96,6 @@ document.addEventListener("DOMContentLoaded", function() {
     showSlide(currentIndex); // Show the first slide initially
     setInterval(nextSlide, 5000); // Change slide every 5 seconds
 });
-
 
 
 
