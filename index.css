@@ -47,7 +47,7 @@ nav a:hover {
 
 @font-face {
     font-family: 'CustomFontName';
-    src: url('/Users/tcpalmer/Downloads/tpalmer9.github.io-main/ThomasCPalmer (4).otf') format('truetype'); /* Adjust path and format as needed */
+    src: url('ThomasCPalmer (4).otf') format('truetype'); /* Adjust path and format as needed */
     font-weight: normal;
     font-style: normal;
 }
@@ -503,14 +503,14 @@ body {
 }
 
 .rings-poem {
-    background-image: url('/Users/tcpalmer/Desktop/Evergreen/tpalmer9.github.io-main/tree-trunk.jpeg');
+    background-image: url('tree-trunk.jpeg');
     background-size: 80%;      /* Ensure the image covers the whole grid item */
     background-repeat: no-repeat; /* Avoid tiling */
     background-position: bottom;
 }
 
 .meadow-poem {
-    background-image: url('/Users/tcpalmer/Desktop/Evergreen/tpalmer9.github.io-main/southern-jazz-movin-on-line-drawing-of-a-new-orleans-musician-on-the-AJGKM1.jpg');
+    background-image: url('southern-jazz-movin-on-line-drawing-of-a-new-orleans-musician-on-the-AJGKM1.jpg');
     background-size: 40%;      /* Ensure the image covers the whole grid item */
     background-repeat: no-repeat; /* Avoid tiling */
     background-position: bottom;
