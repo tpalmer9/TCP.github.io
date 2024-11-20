@@ -408,7 +408,6 @@ body {
     width: 100%;
     background-color: white;
     border-top: 1px solid #444;
-    border-bottom: 1px solid #444;
     box-sizing: border-box;
     z-index: 2;
 }
@@ -427,22 +426,27 @@ body {
 
 .writing-grid-container {
     display: flex;
+    overflow-x: auto;
     overflow-y: hidden;
-    width: 100vw;
+    scroll-snap-type: x mandatory;
+    width: 100%;
 }
 
 .writing-grid-container .grid-item {
-    flex: 0 0 20vw; 
+    flex: 0 0 auto; 
     position: relative;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    border-right: 1px solid #444;
+    width: 20%;
+    height: 100%; 
+    border-left: 0.5px solid #444;
+    border-right: 0.5px solid #444;
+    padding-bottom: 50px;
+    text-align: center;
+    box-sizing: border-box;
     aspect-ratio: 1 / 1;
     scroll-snap-align: start;
-    overflow: hidden;
+    transition: transform 0.3s ease;
+    z-index: 0; 
     background-color: white;
-    transition: transform 0.3s ease-in-out;
 }
 .writing-grid-container .grid-item a {
     cursor: default;
@@ -456,8 +460,8 @@ body {
     bottom: 0; 
     left: 0;
     width: 100%;
+    height: 2vw;
     border-top: 1px solid #444;
-    border-bottom: 1px solid #444;
     box-sizing: border-box;
 }
 
@@ -474,7 +478,7 @@ body {
 .writing-grid-container .grid-item h3 {
     font-size: 1.0em;
     padding: 100px 60px;
-    margin: -20px 0 10px;
+    margin: 0 0 10px;
     font-family: 'Palatino', serif;
     font-weight: 400;
     text-decoration: none; 
@@ -531,18 +535,25 @@ body {
 }
 
 .music-grid-container {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scroll */
     overflow-y: hidden;
+    scroll-snap-type: x mandatory;
     border-bottom: 1px solid #444;
+    white-space: nowrap;
+    height: 100%;
     width: 100vw;
 }
 
 .music-grid-container .grid-item {
-    flex: 0 0 20vw;
+    flex: 0 0 20vw; 
     position: relative;
+    display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
-    border-right: 1px solid #444;
+    border-left: 0.5px solid #444;
+    border-right: 0.5px solid #444;
     aspect-ratio: 1 / 1;
     scroll-snap-align: start;
     overflow: hidden;
@@ -581,6 +592,7 @@ body {
 }
 
 .music-grid-container a.grid-item {
+    display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
@@ -610,7 +622,6 @@ body {
     width: 100%;
     background-color: white;
     border-top: 1px solid #444;
-    border-bottom: 1px solid #444;
     box-sizing: border-box;
     z-index: 2;
 }
@@ -661,18 +672,4 @@ footer {
     font-size: 0.6em;
     color: #555;
     padding-left: 20px;
-}
-
-
-/* Default Grid for Larger Screens */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 boxes per row */
-}
-
-/* Responsive Layout for Smaller Screens */
-@media screen and (max-width: 1040px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
