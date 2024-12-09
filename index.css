@@ -284,6 +284,7 @@ body {
 
 .details-box p {
     font-size: 1em;
+    margin-right: 10px;
     color: #666;
 }
 
@@ -301,11 +302,7 @@ body {
     transition: transform 0.4s ease;
 }
 
-/* Active grid item expands to the left */
-.grid-item.active {
-    flex: 0 0 30vw; /* Adjust width as desired */
-    transition: flex 0.3s ease;
-}
+
 
 .work-grid-container.expanded {
     width: 20vw; /* Shrink container width to show only one item */
@@ -337,7 +334,6 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    border-right: 1px solid #444;
     aspect-ratio: 1 / 1;
     scroll-snap-align: start;
     overflow: hidden;
@@ -425,28 +421,23 @@ body {
 /* WRITING */
 
 .writing-grid-container {
-    display: flex;
-    overflow-x: auto;
     overflow-y: hidden;
-    scroll-snap-type: x mandatory;
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .writing-grid-container .grid-item {
-    flex: 0 0 auto; 
+    flex: 0 0 20vw; 
     position: relative;
-    width: 20%;
-    height: 100%; 
-    border-left: 0.5px solid #444;
-    border-right: 0.5px solid #444;
-    padding-bottom: 50px;
-    text-align: center;
-    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    height: 100%;
     aspect-ratio: 1 / 1;
     scroll-snap-align: start;
-    transition: transform 0.3s ease;
-    z-index: 0; 
+    overflow: hidden;
     background-color: white;
+    transition: transform 0.3s ease-in-out;
 }
 .writing-grid-container .grid-item a {
     cursor: default;
@@ -460,7 +451,6 @@ body {
     bottom: 0; 
     left: 0;
     width: 100%;
-    height: 2vw;
     border-top: 1px solid #444;
     box-sizing: border-box;
 }
@@ -478,8 +468,9 @@ body {
 .writing-grid-container .grid-item h3 {
     font-size: 1.0em;
     padding: 100px 60px;
-    margin: 0 0 10px;
+    margin: -20px 0 10px;
     font-family: 'Palatino', serif;
+    text-align: center;
     font-weight: 400;
     text-decoration: none; 
     color: inherit; 
@@ -535,25 +526,18 @@ body {
 }
 
 .music-grid-container {
-    display: flex;
-    overflow-x: auto; /* Enables horizontal scroll */
     overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    border-bottom: 1px solid #444;
-    white-space: nowrap;
-    height: 100%;
-    width: 100vw;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .music-grid-container .grid-item {
-    flex: 0 0 20vw; 
+    flex: 0 0 20vw;
     position: relative;
-    display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
-    border-left: 0.5px solid #444;
-    border-right: 0.5px solid #444;
     aspect-ratio: 1 / 1;
     scroll-snap-align: start;
     overflow: hidden;
@@ -574,7 +558,8 @@ body {
     height: 80%;
     object-fit: contain;
     padding-bottom: 40px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1;
 }
 
 .music-grid-container .grid-item .title-overlay {
@@ -583,16 +568,14 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    padding-bottom: 40px;
+    padding-bottom: 4px;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.5);
     opacity: 0;
     transition: opacity 0.3s ease;
-    z-index: 1;
+    z-index: 10;
 }
 
 .music-grid-container a.grid-item {
-    display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
@@ -607,13 +590,19 @@ body {
     margin: 0;
 }
 
+
+
 .music-grid-container .grid-item:hover .cover img {
     transform: scale(0.8);
+    opacity: 0.3;
 }
 
 .music-grid-container .grid-item:hover .title-overlay {
     opacity: 1;
 }
+
+
+
 
 .music-grid-container .grid-item .description {
     position: absolute;
@@ -652,6 +641,7 @@ body {
     padding-top: 400px;
     padding-bottom: 400px;
     border-bottom: 1px solid #444;
+    border-top: 1px solid #444;
 }
 #contact p a {
     color: black; 
@@ -672,4 +662,124 @@ footer {
     font-size: 0.6em;
     color: #555;
     padding-left: 20px;
+}
+
+
+@media screen and (max-width: 1040px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    }
+
+    .work-grid-container {
+        display: block; /* Switch to block layout */
+        grid-template-columns: 1fr; /* Force single-column layout */
+    }
+    
+    .work-grid-container .grid-item {
+        flex: 1 1 100%;
+        height: calc(50vw);
+        aspect-ratio: auto;
+    }
+    
+    .details-box.active {
+        width: 100%; /* Ensure the details box still fits within the new layout */
+    }
+
+}
+
+.work-grid-container .grid-item,
+.writing-grid-container .grid-item,
+.music-grid-container .grid-item {
+    border-right: 1px solid #444; /* Right borders always exist */
+    box-sizing: border-box; /* Ensure borders are within the element */
+}
+
+.music-grid-container > .grid-item:nth-child(1),
+.music-grid-container > .grid-item:nth-child(2),
+.music-grid-container > .grid-item:nth-child(3),
+.music-grid-container > .grid-item:nth-child(4),
+.music-grid-container > .grid-item:nth-child(5) {
+    border-bottom: 1px solid black;
+}
+
+@media (max-width: 1040px) {
+    .music-grid-container > .grid-item:nth-child(1),
+    .music-grid-container > .grid-item:nth-child(2),
+    .music-grid-container > .grid-item:nth-child(3),
+    .music-grid-container > .grid-item:nth-child(4) {
+        border-bottom: 1px solid black;
+    }
+
+    .music-grid-container > .grid-item:nth-child(5) {
+        border-bottom: none;
+    }
+
+    .writing-grid-container > .grid-item:nth-child(1),
+    .writing-grid-container > .grid-item:nth-child(2),
+    .writing-grid-container > .grid-item:nth-child(3),
+    .writing-grid-container > .grid-item:nth-child(4) {
+        border-bottom: 1px solid black;
+    }
+
+    .work-grid-container > .grid-item:nth-child(1),
+    .work-grid-container > .grid-item:nth-child(2) {
+        border-bottom: 1px solid black;
+    }
+
+    .work-grid-container .grid-item.active {
+        border-bottom: 1px solid black;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.7em; /* Reduce font size further */
+    }
+
+    nav a {
+        font-size: 0.5em;
+    }
+
+    .overlay-text {
+        font-size: 0.8em; /* Smaller text for overlay */
+        width: 80%; /* Further reduce width */
+    }
+
+    .about-textbox {
+        width: 90%; /* Adjust width for mobile */
+        padding: 15px;
+    }
+
+    .grid-item h3 {
+        font-size: 0.8em; /* Smaller titles in grids */
+        padding: 10px;
+    }
+
+    .details-box {
+        font-size: 0.9em; /* Ensure content remains readable */
+        padding: 10px;
+    }
+}
+
+/* Smallest Screens */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em; /* Further reduce size */
+    }
+
+    nav a {
+        font-size: 0.7em;
+    }
+
+    .grid-item .description p {
+        font-size: 0.7em; /* Adjust text size */
+    }
+
+    #contact {
+        padding: 30px 10px; /* Reduce padding for smaller devices */
+    }
 }
