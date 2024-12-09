@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     showSlide(currentIndex); // Show the first slide initially
     setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
 });
 
 
@@ -131,3 +132,5 @@ document.getElementById('close-details').addEventListener('click', function() {
     gridItems.forEach(el => el.classList.remove('hidden', 'active'));
     detailsBox.classList.remove('active');
 });
+
+
